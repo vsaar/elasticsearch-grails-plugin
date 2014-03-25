@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
-        <title>ElasticSearch GORM Plugin 0.0.2.2</title>
+        <title>ElasticSearch GORM Plugin 0.0.2.4</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
         <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
@@ -23,21 +23,21 @@ function addJsClass(el) {
                         <a href="../guide/index.html" class="button">Table of contents</a>
                         <div id="nav-summary-childs" style="display:none;">
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#1.%20Introduction"><strong>1</strong><span>Introduction</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#2.%20Configuration"><strong>2</strong><span>Configuration</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#configuration"><strong>2</strong><span>Configuration</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#3.%20Mapping"><strong>3</strong><span>Mapping</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#mapping"><strong>3</strong><span>Mapping</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#4.%20Indexing"><strong>4</strong><span>Indexing</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#indexing"><strong>4</strong><span>Indexing</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#5.%20Searching"><strong>5</strong><span>Searching</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#searching"><strong>5</strong><span>Searching</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#6.%20Admin"><strong>6</strong><span>Admin</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#admin"><strong>6</strong><span>Admin</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#7.%20Low%20level%20API"><strong>7</strong><span>Low level API</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#lowLevelAPI"><strong>7</strong><span>Low level API</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0"><a href="#8.%20Example"><strong>8</strong><span>Example</span></a></div>
+                            <div class="toc-item" style="margin-left:0"><a href="#example"><strong>8</strong><span>Example</span></a></div>
                             
                         </div>
                     </div>
@@ -66,7 +66,7 @@ function addJsClass(el) {
                         <div class="project">
                             <h1>ElasticSearch GORM Plugin - Reference Documentation</h1>
                             <p><strong>Authors:</strong> Noam Y. Tenne, Manuarii Stein, Stephane Maldini, Serge P. Nekoval</p>
-                            <p><strong>Version:</strong> 0.0.2.2</p>
+                            <p><strong>Version:</strong> 0.0.2.4</p>
                             
                         </div>
 
@@ -74,61 +74,86 @@ function addJsClass(el) {
                         <div id="table-of-content">
                             <h2>Table of Contents</h2>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#1.%20Introduction"><strong>1</strong><span>Introduction</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#1.1%20Features"><strong>1.1</strong><span>Features</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#features"><strong>1.1</strong><span>Features</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#1.2%20History"><strong>1.2</strong><span>History</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#history"><strong>1.2</strong><span>History</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#2.%20Configuration"><strong>2</strong><span>Configuration</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#configuration"><strong>2</strong><span>Configuration</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#3.%20Mapping"><strong>3</strong><span>Mapping</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#mapping"><strong>3</strong><span>Mapping</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#3.1%20QuickStart"><strong>3.1</strong><span>QuickStart</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#quickStart"><strong>3.1</strong><span>QuickStart</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#3.2%20Class%20mapping"><strong>3.2</strong><span>Class mapping</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#classMapping"><strong>3.2</strong><span>Class Mapping</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#3.3%20Properties%20mapping"><strong>3.3</strong><span>Properties mapping</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#propertiesMapping"><strong>3.3</strong><span>Properties mapping</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#3.4%20Searchable%20Component-Reference"><strong>3.4</strong><span>Searchable Component-Reference</span></a></div>
+                            <div class="toc-item" style="margin-left:20px"><a href="#parentChild"><strong>3.3.1</strong><span>Parent-Child</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:20px"><a href="#3.4.1%20Searchable%20Reference"><strong>3.4.1</strong><span>Searchable Reference</span></a></div>
+                            <div class="toc-item" style="margin-left:20px"><a href="#geoPoint"><strong>3.3.2</strong><span>GeoPoint</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:20px"><a href="#3.4.2%20Searchable%20Component"><strong>3.4.2</strong><span>Searchable Component</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#searchableComponentReference"><strong>3.4</strong><span>Searchable Component-Reference</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#4.%20Indexing"><strong>4</strong><span>Indexing</span></a></div>
+                            <div class="toc-item" style="margin-left:20px"><a href="#searchableReference"><strong>3.4.1</strong><span>Searchable Reference</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#5.%20Searching"><strong>5</strong><span>Searching</span></a></div>
+                            <div class="toc-item" style="margin-left:20px"><a href="#searchableComponent"><strong>3.4.2</strong><span>Searchable Component</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#5.1%20Query%20Strings"><strong>5.1</strong><span>Query Strings</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#indexing"><strong>4</strong><span>Indexing</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#5.2%20Query%20Closure"><strong>5.2</strong><span>Query Closure</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#searching"><strong>5</strong><span>Searching</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#5.3%20Highlighting"><strong>5.3</strong><span>Highlighting</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#queryStrings"><strong>5.1</strong><span>Query Strings</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#6.%20Admin"><strong>6</strong><span>Admin</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#queryClosure"><strong>5.2</strong><span>Query Closure</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#6.1%20Refresh"><strong>6.1</strong><span>Refresh</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#filterClosure"><strong>5.3</strong><span>Filter Closure</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:10px"><a href="#6.2%20Delete%20Index"><strong>6.2</strong><span>Delete Index</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#highlighting"><strong>5.4</strong><span>Highlighting</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#7.%20Low%20level%20API"><strong>7</strong><span>Low level API</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#sorting"><strong>5.5</strong><span>Sorting</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#8.%20Example"><strong>8</strong><span>Example</span></a></div>
+                            <div class="toc-item" style="margin-left:20px"><a href="#geodistanceSorting"><strong>5.5.1</strong><span>geoDistanceSorting</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#admin"><strong>6</strong><span>Admin</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#refresh"><strong>6.1</strong><span>Refresh</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#deleteIndex"><strong>6.2</strong><span>Delete Index</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#lowLevelAPI"><strong>7</strong><span>Low level API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#example"><strong>8</strong><span>Example</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#twitter"><strong>8.1</strong><span>Tweets</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="#theDomains"><strong>8.1.1</strong><span>The domains</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="#theController"><strong>8.1.2</strong><span>The controller</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#geoDistanceSearch"><strong>8.2</strong><span>Geo Distance Search</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="#geoDistanceDomains"><strong>8.2.1</strong><span>Domains</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="#geoDistanceService"><strong>8.2.2</strong><span>Service Methods</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#parentChildExample"><strong>8.3</strong><span>Parent/Child mapping</span></a></div>
                             
                             <div style="clear:both" ></div>
                         </div>
                         
                         
 
-<h1 id="1. Introduction">1 Introduction</h1>
+<h1 id="introduction">1 Introduction</h1>
 The ElasticSearch plugin intends to implement a simple integration with Grails of the Open Source Search Engine <a href="http://www.elasticsearch.org/" target="blank">ElasticSearch</a>,
 which is based on Lucene and provide distributed capabilities.<p class="paragraph"/>The plugin focus on exposing Grails domain classes for the moment. It highly takes the existing <a href="http://grails.org/plugin/searchable" target="blank">Searchable Plugin</a> as
 reference for its syntax and behavior.<p class="paragraph"/>Note that the plugin is still under development, so you may not be able to use all the features of ElasticSearch yet.
 As for now, you should only use this plugin for testing purpose since you may lack some functionality in a production environment.<p class="paragraph"/>In addition to this document, you may want to read the official ElasticSearch documentation <a href="http://www.elasticsearch.org/guide/" target="blank">here</a>.
 
 
-<h2 id="1.1 Features">1.1 Features</h2>
+
+<h2 id="features">1.1 Features</h2>
 <ul class="star">
 <li>Maps domain classes to their corresponding index in ElasticSearch</li>
 <li>Provides an ElasticSearch service for cross-domain searching</li>
@@ -139,9 +164,25 @@ As for now, you should only use this plugin for testing purpose since you may la
 </ul><p class="paragraph"/>
 
 
-<h2 id="1.2 History">1.2 History</h2>
+<h2 id="history">1.2 History</h2>
 <h4>History</h4>
 <ul class="star">
+<li>March 24, 2014</li>
+<ul class="star">
+<li>0.0.2.4</li>
+<ul class="star">
+<li>GeoPoint mapping</li>
+<li>Injected service now supports filters (e.g. geo_reference) and sort builders (e.g. for geo_distance sorting)</li>
+<li>Marshalled date values are now with correct time zone</li>
+<li>Removed dependency on Java 7</li>
+<li>Fix support of BigDecimal</li>
+<li>Searchable mapping property name and Elasticsearch plugin path are now configurable.</li>
+</ul>
+</ul>
+<li>February 4, 2014</li>
+<ul class="star">
+<li>0.0.2.3 Bugfix release</li>
+</ul>
 <li>January 19, 2014</li>
 <ul class="star">
 <li>0.0.2.2 Bugfix release</li>
@@ -157,10 +198,13 @@ As for now, you should only use this plugin for testing purpose since you may la
 <li>November 2, 2013</li>
 <ul class="star">
 <li>initial 0.0.1 release</li>
-</ul></ul><p class="paragraph"/><h4>Authors and Contributors</h4><p class="paragraph"/>Noam Y. Tenne<p class="paragraph"/><h4>Authors and Contributors of the original plugin</h4><p class="paragraph"/>Manuarii Stein (doc4web consulting),
+</ul></ul><p class="paragraph"/><h4>Authors and Contributors</h4><p class="paragraph"/>Noam Y. Tenne,
+Stefan Rother-Stübs (Dating Cafe),
+Sven Kiesewetter (Dating Cafe),
+Michael Schwartz (Dating Cafe)<p class="paragraph"/><h4>Authors and Contributors of the original plugin</h4><p class="paragraph"/>Manuarii Stein (doc4web consulting),
 Stephane Maldini (doc4web consulting),
 Serge P. Nekoval<p class="paragraph"/>Get the full and updated list of contributors on the <a href="../ref/Httpsgithubcomnoamtelasticsearchgormplugin/github.html" class="https://github.com/noamt/elasticsearch-gorm-plugin">github</a> repository.<p class="paragraph"/><h4>License</h4><p class="paragraph"/><blockquote class="quote">
-    Copyright 20013-2014 the original author or authors.<p class="paragraph"/>    Licensed under the Apache License, Version 2.0 (the "License");
+    Copyright 2013-2014 the original author or authors.<p class="paragraph"/>    Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at<p class="paragraph"/>        http://www.apache.org/licenses/LICENSE-2.0<p class="paragraph"/>    Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
@@ -171,7 +215,7 @@ Serge P. Nekoval<p class="paragraph"/>Get the full and updated list of contribut
 
 
 
-<h1 id="2. Configuration">2 Configuration</h1>
+<h1 id="configuration">2 Configuration</h1>
 The plugin provide a default configuration, but you may add your own settings in your <strong class="bold">Config.groovy</strong> script.<p class="paragraph"/><h4>Client mode</h4>
 You can set the plugin in 3 different modes, detailed on the <a href="http://www.elasticsearch.org/guide/en/elasticsearch/client/java-api/current/" target="blank">official ElasticSearch doc</a>.
 The mode is defined with the following config key:<p class="paragraph"/><div class="code"><pre>elasticSearch.client.mode = '&#60;mode&#62;'</pre></div><p class="paragraph"/><strong class="bold">Possible values:</strong>
@@ -216,6 +260,9 @@ Default to <code>false</code>.
 <li><code>elasticSearch.bulkIndexOnStartup</code></li>
 </ul><p class="paragraph"/>A boolean determining if the application should launch a bulk index operation upon startup. Default to <code>true</code>.
 <ul class="star">
+<li><code>elasticSearch.index.name</code></li>
+</ul><p class="paragraph"/>A string indicating which ElasticSearch index should be used.  If not present, will default to the package name of the domain in question.
+<ul class="star">
 <li><code>elasticSearch.index.compound_format</code></li>
 </ul><p class="paragraph"/>Should the compound file format be used (boolean setting).
 Set to <code>false</code> by default (really applicable for file system based index storage).
@@ -237,7 +284,13 @@ Reduce this value if you have memory issue when indexing a big amount of data at
 If this setting is not specified, 500 will be use by default.
 <ul class="star">
 <li><code>elasticSearch.path.data</code></li>
-</ul><p class="paragraph"/>The location of the data files of each index / shard allocated on the node.<p class="paragraph"/><h4>Default configuration script</h4>
+</ul><p class="paragraph"/>The location of the data files of each index / shard allocated on the node.
+<ul class="star">
+<li><code>elasticSearch.path.plugins</code></li>
+</ul><p class="paragraph"/>The location of plugin files such as native scripts. Each plugin will be contained in a subdirectory.
+<ul class="star">
+<li><code>elasticSearch.searchableProperty.name</code></li>
+</ul><p class="paragraph"/>The name of the ElasticSearch mapping configuration property that annotates domain classes. The default is 'searchable'.<p class="paragraph"/><h4>Default configuration script</h4>
 Below is the default configuration loaded by the plugin (any of your settings in the Config.groovy script overwrite those).<p class="paragraph"/><div class="code"><pre>elasticSearch &#123;
   /&#42;&#42;
    &#42; Date formats used by the unmarshaller of the JSON responses
@@ -271,7 +324,11 @@ Below is the default configuration loaded by the plugin (any of your settings in
    &#42;  Max number of requests to process at once. Reduce <span class="java&#45;keyword">this</span> value <span class="java&#45;keyword">if</span> you have memory issue when indexing a big amount of data
    &#42;  at once. If <span class="java&#45;keyword">this</span> setting is not specified, 500 will be use by <span class="java&#45;keyword">default</span>.
    &#42;/
-  maxBulkRequest = 500
+  maxBulkRequest = 500<p class="paragraph"/>
+  /&#42;&#42;
+   &#42; The name of the ElasticSearch mapping configuration property that annotates domain classes. The <span class="java&#45;keyword">default</span> is 'searchable'.
+   &#42;/
+  searchableProperty.name = 'searchable'
 &#125;<p class="paragraph"/>environments &#123;
   development &#123;
     /&#42;&#42;
@@ -293,11 +350,12 @@ Below is the default configuration loaded by the plugin (any of your settings in
 
 
 
-<h1 id="3. Mapping">3 Mapping</h1>
+<h1 id="mapping">3 Mapping</h1>
 
 
 
-<h2 id="3.1 QuickStart">3.1 QuickStart</h2>
+
+<h2 id="quickStart">3.1 QuickStart</h2>
 <h4>Default mapping</h4>
 To declare a domain class to be searchable, the simplest way is to define the following static property in the code:
 <div class="code"><pre><span class="java&#45;keyword">static</span> searchable = <span class="java&#45;keyword">true</span></pre></div>
@@ -334,7 +392,8 @@ You may not define both except &#38; only settings at the same time.<p class="pa
 from ElasticSearch, some fields that are not supposed to be null, may still be null.</blockquote>
 
 
-<h2 id="3.2 Class mapping">3.2 Class mapping</h2>
+
+<h2 id="classMapping">3.2 Class Mapping</h2>
 <h4>root</h4>
 Determine if the domain class will have its own index or not. Take a boolean as parameter, and is set to <code>true</code> by default.
 <div class="code"><pre>class Preference &#123;
@@ -364,24 +423,53 @@ For example, considered the following domain:
 When searching, any matches in the <code>userPreferences</code> property will be considered as a <code>User</code> match.
 
 
-<h2 id="3.3 Properties mapping">3.3 Properties mapping</h2>
+
+<h2 id="propertiesMapping">3.3 Properties mapping</h2>
 You can customize the mapping for each domain properties using the closure mapping.
 The syntax is simple:
 <div class="code"><pre><span class="java&#45;keyword">static</span> searchable = &#123;
     propertyName option1:value, option2:value, &#8230;
+&#125;</pre></div><p class="paragraph"/><h4>Available options</h4><p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Option name</strong></th><th>Values</th><th><strong class="bold">Description</strong></th></tr><tr class="table-odd"><td>boost</td><td>Number</td><td>A decimal boost value. With a positive value, promotes search results for hits in this property; with a negative value, demotes search results that hit this property.</td></tr><tr class="table-even"><td><a href="../guide/single.html#searchableComponent" class="guide">component</a></td><td><code>true</code>, <code>false</code></td><td>To use only on domain (or collection of domains), make the property a searchable component.</td></tr><tr class="table-odd"><td>converter</td><td>A <code>Class</code></td><td>A <code>Class</code> to use as a converter during the marshalling/unmarshalling process for that peculiar property. That class must extends the <code>PropertyEditorSupport</code> java class.</td></tr><tr class="table-even"><td>excludeFromAll</td><td><code>true</code>, <code>false</code></td><td>determines if the property is to append in the <code>"_all"</code> field. Default to <code>true</code>.</td></tr><tr class="table-odd"><td>index</td><td><code>"no"</code>, <code>"not_analyzed"</code>, <code>"analyzed"</code>.</td><td>How or if the property is made into searchable element. One of <code>"no"</code>, <code>"not_analyzed"</code> or <code>"analyzed"</code>.</td></tr><tr class="table-even"><td><a href="../guide/single.html#searchableReference" class="guide">reference</a></td><td><code>true</code>, <code>false</code></td><td>To use only on domain (or collection of domains), make the property a searchable reference.</td></tr><tr class="table-odd"><td><a href="../guide/single.html#parentChild" class="guide">parent</a></td><td><code>true</code>, <code>false</code></td><td>A boolean value to be used in conjunction with the <code>reference</code> or <code>component</code> property . Set to <code>true</code> if the referenced field should be mapped as the parent of this document. Default set to <code>false</code>.</td></tr><tr class="table-even"><td>multi_field</td><td><code>true</code>, <code>false</code></td><td>A boolean value. Maps the value of the field twice; Once with it being analyzed, and once with it being not_analyzed under untouched. Default set to <code>false</code>.</td></tr><tr class="table-odd"><td><a href="../guide/single.html#geoPoint" class="guide">geoPoint</a></td><td><code>true</code>, <code>false</code></td><td>Maps the field to a geo_point. Default: <code>false</code></td></tr></table>
+
+
+
+<h2 id="parentChild">3.3.1 Parent-Child</h2>
+To map a parent/child relationship, the child element must either contain the parent element as a component or reference it as a referenced document.
+This component must be mapped as a parent in the child element.<p class="paragraph"/><h4>Example</h4><p class="paragraph"/><div class="code"><pre>class ParentElement &#123;
+…
+&#125;<p class="paragraph"/>class EmbeddingChild &#123;
+    ParentElement parentElement<p class="paragraph"/>    <span class="java&#45;keyword">static</span> searchable = &#123;
+        parentElement parent: <span class="java&#45;keyword">true</span>, component: <span class="java&#45;keyword">true</span>
+    &#125;
+&#125;</pre></div><p class="paragraph"/>class ReferencingChild {
+    ParentElement parentElement<p class="paragraph"/>    static searchable = {
+        parentElement parent: true, reference: true
+    }
+}
+<div class="code"><pre><div class="error">code: null</div><p class="paragraph"/>
+
+
+<h2 id="geoPoint">3.3.2 GeoPoint</h2>
+A geographic location can be mapped to a geo_point. The field for the longitude has to be named <code>lon</code> and the field for the latitude has to be named <code>lat</code><p class="paragraph"/><h4>Example</h4><p class="paragraph"/><div class="code"><pre>class GeoPoint &#123;<p class="paragraph"/>    <span class="java&#45;object">Double</span> lat
+    <span class="java&#45;object">Double</span> lon<p class="paragraph"/>    <span class="java&#45;keyword">static</span> searchable = &#123;
+        root <span class="java&#45;keyword">false</span>
+    &#125;
+&#125;<p class="paragraph"/>class Building &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> name
+    GeoPoint location<p class="paragraph"/>    <span class="java&#45;keyword">static</span> searchable = &#123;
+        location geoPoint: <span class="java&#45;keyword">true</span>, component: <span class="java&#45;keyword">true</span>
+    &#125;
 &#125;</pre></div>
-<strong class="bold">Available options</strong>
-<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Option name</strong></th><th><strong class="bold">Description</strong></th></tr><tr class="table-odd"><td>boost</td><td>A decimal boost value. With a positive value, promotes search results for hits in this property; with a negative value, demotes search results that hit this property.</td></tr><tr class="table-even"><td>component</td><td>To use only on domain (or collection of domains), make the property a searchable component.</td></tr><tr class="table-odd"><td>converter</td><td>A <code>Class</code> to use as a converter during the marshalling/unmarshalling process for that peculiar property. That class must extends the <code>PropertyEditorSupport</code> java class.</td></tr><tr class="table-even"><td>excludeFromAll</td><td>A boolean, determines if the property is to append in the <code>"_all"</code> field. Default to <code>true</code>.</td></tr><tr class="table-odd"><td>index</td><td>How or if the property is made into searchable element. One of <code>"no"</code>, <code>"not_analyzed"</code> or <code>"analyzed"</code>.</td></tr><tr class="table-even"><td>reference</td><td>To use only on domain (or collection of domains), make the property a searchable reference.</td></tr><tr class="table-odd"><td>parent</td><td>A boolean value to be used in conjunction with the <code>reference</code> property. Set to <code>true</code> if the referenced field should be mapped as the parent of this document. Default set to <code>false</code>.</td></tr><tr class="table-even"><td>multi_field</td><td>A boolean value. Maps the value of the field twice; Once with it being analyzed, and once with it being not_analyzed under untouched. Default set to <code>false</code>.</td></tr></table>
 
 
-<h2 id="3.4 Searchable Component-Reference">3.4 Searchable Component-Reference</h2>
+
+<h2 id="searchableComponentReference">3.4 Searchable Component-Reference</h2>
 The plugin support a similar searchable-component &#38; searchable-reference behavior from Compass
 when you are dealing with domain association.
 See below to find out about the difference between both mapping modes.
 
 
 
-<h2 id="3.4.1 Searchable Reference">3.4.1 Searchable Reference</h2>
+<h2 id="searchableReference">3.4.1 Searchable Reference</h2>
 The searchable-reference mapping mode is the default mode used for association, and requires the
 searchable class of the association to be root-mapped in order to have its own index.
 With this mode, the associated domains are not completely marshalled in the resulting JSON document:
@@ -416,7 +504,8 @@ class OtherDomain &#123;
 &#125;</pre></div>
 
 
-<h2 id="3.4.2 Searchable Component">3.4.2 Searchable Component</h2>
+
+<h2 id="searchableComponent">3.4.2 Searchable Component</h2>
 The searchable-component mapping mode must be explicitly set, and does not require the
 searchable class of the association to be root-mapped.
 With this mode, the associated domains are nested in the parent document.<p class="paragraph"/><strong class="bold">Example</strong>
@@ -446,7 +535,8 @@ class OtherDomain &#123;
 &#125;</pre></div>
 
 
-<h1 id="4. Indexing">4 Indexing</h1>
+
+<h1 id="indexing">4 Indexing</h1>
 With its default configuration (with the <code>disableAutoIndex</code> configuration key set to <code>false</code>), the plugin is indexing
 automatically any searchable domains when GORM/Hibernate do a save or an update in the database.
 It also delete automatically from the index any document corresponding to a domain that is deleted from the database.
@@ -478,7 +568,7 @@ elasticSearchService.unindex(MyDomain, MyOtherDomain)
 elasticSearchService.unindex(&#91;MyDomain, MyOtherDomain&#93;)</pre></div>
 
 
-<h1 id="5. Searching">5 Searching</h1>
+<h1 id="searching">5 Searching</h1>
 The plugin provides 2 ways to send search requests.
 <ul class="star">
 <li>You can use the <code>elasticSearchService</code> and its public <code>search</code> method for cross-domain searching, meaning that ElasticSearch</li>
@@ -513,7 +603,7 @@ println <span class="java&#45;quote">"Found $&#123;res&#125; result(s)"</span><p
 println <span class="java&#45;quote">"Found $&#123;res&#125; result(s)"</span></pre></div>
 
 
-<h2 id="5.1 Query Strings">5.1 Query Strings</h2>
+<h2 id="queryStrings">5.1 Query Strings</h2>
 The search method injected in the domain or the <code>ElasticSearchService</code> has multiple signatures available.
 You can pass it a simple <code>String</code> to compute your search request. That string will be parsed by the <strong class="bold">Lucene query parser</strong>
 so feel free to use its syntax to do more specific search query.<p class="paragraph"/>You can find out about the syntax on the <a href="http://lucene.apache.org/java/3_0_3/queryparsersyntax.html" target="blank">Apache Lucene website</a>.<p class="paragraph"/><strong class="bold">Example</strong>
@@ -521,10 +611,11 @@ so feel free to use its syntax to do more specific search query.<p class="paragr
 def resultsTweets = Tweet.search(<span class="java&#45;quote">"message:$&#123;params.query&#125;"</span>)</pre></div>
 
 
-<h2 id="5.2 Query Closure">5.2 Query Closure</h2>
-You can use the <a href="http://www.elasticsearch.org/guide/reference/groovy-api/search.html" target="blank">Groovy Query DSL</a> to build your search query as a <code>Closure</code>.
-The format of the search <code>Closure</code> follow the same JSON syntax as the <a href="http://www.elasticsearch.org/guide/reference/api/search/" target="blank">ElasticSearch REST API</a>
-and the <a href="http://www.elasticsearch.org/guide/reference/java-api/query-dsl.html" target="blank">Java Query DSL</a>.<p class="paragraph"/><strong class="bold">Example</strong>
+
+<h2 id="queryClosure">5.2 Query Closure</h2>
+You can use the <a href="http://www.elasticsearch.org/guide/en/elasticsearch/client/groovy-api/current/search.html" target="blank">Groovy Query DSL</a> to build your search query as a <code>Closure</code>.
+The format of the search <code>Closure</code> follow the same JSON syntax as the <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search.html" target="blank">ElasticSearch REST API</a>
+and the <a href="http://www.elasticsearch.org/guide/en/elasticsearch/client/java-api/current/query-dsl-queries.html" target="blank">Java Query DSL</a>.<p class="paragraph"/><strong class="bold">Example</strong>
 <div class="code"><pre>def result = elasticSearchService.search(searchType:'dfs_query_and_fetch') &#123;
   bool &#123;
       must &#123;
@@ -539,12 +630,25 @@ and the <a href="http://www.elasticsearch.org/guide/reference/java-api/query-dsl
 &#125;</pre></div>
 
 
-<h2 id="5.3 Highlighting">5.3 Highlighting</h2>
+<h2 id="filterClosure">5.3 Filter Closure</h2>
+A filter closure can be passed as a second argument after the search closure to the search method.<p class="paragraph"/><h4>Example</h4><p class="paragraph"/><div class="code"><pre>def result = elasticSearchService.search(
+    &#91;indices: Building, types: Building, sort: sortBuilder&#93;,
+    <span class="java&#45;keyword">null</span> as Closure,
+    &#123;
+        geo_distance(
+            'distance': '5km',
+            'location': &#91;lat: 48.141, lon: 11.57&#93;
+        )
+    &#125;)</pre></div>
+
+
+
+<h2 id="highlighting">5.4 Highlighting</h2>
 The search method support highlighting: automatic wrapping of the matching terms in the search results with
 HTML/XML/Whatever tags.
 You can activate this with a <code>Closure</code> containing the highlight settings in the search method <code>highlight</code> parameter.
 The format of the <code>Closure</code> for defining the highlight settings is the same as the
-<a href="http://www.elasticsearch.org/guide/reference/api/search/highlighting.html" target="blank">ElasticSearch REST API</a>.<p class="paragraph"/><strong class="bold">Example</strong>
+<a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-highlighting.html" target="blank">ElasticSearch REST API</a>.<p class="paragraph"/><strong class="bold">Example</strong>
 <div class="code"><pre>// Define the pre &#38; post tag that will wrap each term matched in the document.
 def highlighter = &#123;
   field 'message'
@@ -580,11 +684,36 @@ You can customize the tags with the <code>preTags</code> and <code>postTags</cod
 &#125;</pre></div>
 
 
-<h1 id="6. Admin">6 Admin</h1>
+<h2 id="sorting">5.5 Sorting</h2>
+To sort the search results, either a field name or a SortBuilder must be passed.<p class="paragraph"/><h4>Returned sort values</h4><p class="paragraph"/>The sort values are not part of the search results themselves but are part of <code>result.sort</code>.
+<code>sort</code> contains all search values calculated by the ElasticSearch server as a list mapped to the id of the respective domain objects<p class="paragraph"/><h4>Example</h4>
+<div class="code"><pre>assert &#91;1:&#91;23, 42&#93;, 2: &#91;24, 40&#93;&#93; == result.sort</pre></div>
+
+
+
+<h2 id="geodistanceSorting">5.5.1 geoDistanceSorting</h2>
+To sort for geo distances, a SortBuilder must be passed to search()<p class="paragraph"/><h4>Example</h4><p class="paragraph"/><div class="code"><pre>def sortBuilder = SortBuilders.geoDistanceSort(<span class="java&#45;quote">"location"</span>)
+    .point(48.141, 11.57)
+    .unit(DistanceUnit.KILOMETERS)
+    .order(SortOrder.ASC)<p class="paragraph"/>def result = elasticSearchService.search(
+    &#91;indices: Building, types: Building, sort: sortBuilder&#93;,
+    <span class="java&#45;keyword">null</span> as Closure,
+    &#123;
+        geo_distance(
+            'distance': '5km',
+            'location': &#91;lat: 48.141, lon: 11.57&#93;
+        )
+    &#125;)</pre></div><p class="paragraph"/>The calculated distances are not part of the search results themselves but are part of <code>result.sort</code>.
+<code>sort</code> contains all search values calculated by the ElasticSearch server as a list mapped to the id of the respective domain objects<p class="paragraph"/><div class="code"><pre>assert &#91;1:&#91;2.34567&#93;, 2: &#91;2.4402342&#93;&#93; == result.sort</pre></div>
+
+
+
+<h1 id="admin">6 Admin</h1>
 The plugin implements a few convenience methods for a few admin-oriented actions.
 
 
-<h2 id="6.1 Refresh">6.1 Refresh</h2>
+
+<h2 id="refresh">6.1 Refresh</h2>
 Explicitly refresh one or more index, making all operations performed since the last refresh available for search.
 It will also flush the current IndexRequestQueue if there are pending index or delete requests from the application side.
 The refresh method is not asynchronous, meaning that it will wait for all operations to complete before resuming the execution of your application.<p class="paragraph"/><div class="code"><pre>elasticSearchService.index(domain)
@@ -598,12 +727,14 @@ elasticSearchService.index(domain3)<p class="paragraph"/>// Some code&#8230;
 elasticSearchAdminService.refresh() // Ensure that the 3 previous index requests have been made searchable by ES</pre></div>
 
 
-<h2 id="6.2 Delete Index">6.2 Delete Index</h2>
+
+<h2 id="deleteIndex">6.2 Delete Index</h2>
 Delete an index, all its mapping and its content from the ElasticSearch instance. Be careful when using this command because it cannot be undone.
 Note that the generated mapping from the grails plugin is also deleted.<p class="paragraph"/>The method can be limited to one or more specific indices or applied to all indices at once (called with no parameter).<p class="paragraph"/><div class="code"><pre>elasticSearchAdminService.deleteIndex()</pre></div>
 
 
-<h1 id="7. Low level API">7 Low level API</h1>
+
+<h1 id="lowLevelAPI">7 Low level API</h1>
 If you need to use the Elastic Search client directly, you can use the <code>elasticSearchHelper</code> bean that is
 injected in any services/controllers to get the current instance.
 Simply encapsulate your code within a <code>withElasticSearch</code> bloc,
@@ -623,8 +754,18 @@ and you will get a <code>org.elasticsearch.client.Client</code> implementation t
 information on the methods and properties available on the client.
 
 
-<h1 id="8. Example">8 Example</h1>
-<h3>The domains</h3>
+
+<h1 id="example">8 Example</h1>
+
+
+
+
+<h2 id="twitter">8.1 Tweets</h2>
+
+
+
+
+<h2 id="theDomains">8.1.1 The domains</h2>
 <div class="code"><pre>class Tweet &#123;
   <span class="java&#45;keyword">static</span> searchable = &#123;
     message boost:2.0
@@ -663,7 +804,11 @@ information on the methods and properties available on the client.
     except=&#91;'boostValue'&#93;
   &#125;<p class="paragraph"/>  <span class="java&#45;object">String</span> name
   <span class="java&#45;object">Integer</span> boostValue = 1
-&#125;</pre></div><p class="paragraph"/><h3>The controller</h3>
+&#125;</pre></div>
+
+
+
+<h2 id="theController">8.1.2 The controller</h2>
 <h4>A action triggering indexation</h4>
 <code>ElasticSearchController</code> (<code>testCaseService</code> is just dealing with GORM instructions):
 <div class="code"><pre>class ElasticSearchController &#123;
@@ -719,6 +864,70 @@ and corresponding <code>User</code> indexed documents will be updated since we h
     redirect(action:'index')
  &#125;</pre></div>
 
+
+<h2 id="geoDistanceSearch">8.2 Geo Distance Search</h2>
+A search for buildings with a geo_distance filter, ordered by distance.
+
+
+
+<h2 id="geoDistanceDomains">8.2.1 Domains</h2>
+
+<div class="code"><pre>class GeoPoint &#123;<p class="paragraph"/>    <span class="java&#45;object">Double</span> lat
+    <span class="java&#45;object">Double</span> lon<p class="paragraph"/>    <span class="java&#45;keyword">static</span> searchable = &#123;
+        root <span class="java&#45;keyword">false</span>
+    &#125;
+&#125;</pre></div>
+GeoPoint represents the geo coordinates for a building. The field names <code>lat</code> and <code>lon</code> are mandatory.<p class="paragraph"/><div class="code"><pre>class Building &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> name
+    GeoPoint location<p class="paragraph"/>    <span class="java&#45;keyword">static</span> searchable = &#123;
+        location geoPoint: <span class="java&#45;keyword">true</span>, component: <span class="java&#45;keyword">true</span>
+    &#125;
+&#125;</pre></div><p class="paragraph"/>The location of the building is mapped to an ElasticSearch <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/mapping-geo-point-type.html" target="blank">geo_point</a>.
+
+
+
+<h2 id="geoDistanceService">8.2.2 Service Methods</h2>
+Searching for all buildings sorted by distance with 5km radius around geo location (lat=41.141, lon=11.57)<p class="paragraph"/><div class="code"><pre>def searchForBuildings() &#123;
+    Closure filter = &#123;
+        geo_distance(
+            'distance': '5km',
+            'location': &#91;lat: 48.141, lon: 11.57&#93;
+        )
+    &#125;<p class="paragraph"/>    def sortBuilder = SortBuilders.geoDistanceSort(<span class="java&#45;quote">"location"</span>).
+        point(48.141, 11.57).
+        unit(DistanceUnit.KILOMETERS).
+        order(SortOrder.ASC)<p class="paragraph"/>    def result = elasticSearchService.search(
+        &#91;indices: Building, types: Building, sort: sortBuilder&#93;,
+        <span class="java&#45;keyword">null</span> as Closure,
+        filter)<p class="paragraph"/>    <span class="java&#45;keyword">return</span> &#91;results: result.searchResults, distances: result.sort&#93;
+&#125;</pre></div><p class="paragraph"/>The calculated distances are not part of the search results themselves but are part of <code>result.sort</code>.
+<code>sort</code> contains all search values calculated by the ElasticSearch server as a list mapped to the id of the respective domain objects<p class="paragraph"/><h4>Example</h4>
+<div class="code"><pre>assert &#91;1:&#91;23, 42&#93;, 2: &#91;24, 40&#93;&#93; == result.sort</pre></div>
+
+
+
+<h2 id="parentChildExample">8.3 Parent/Child mapping</h2>
+A store with many departments
+<div class="code"><pre>class Store &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> name
+    <span class="java&#45;object">String</span> description = <span class="java&#45;quote">"A description of a store"</span>
+    <span class="java&#45;object">String</span> owner = <span class="java&#45;quote">"Shopowner"</span><p class="paragraph"/>    <span class="java&#45;keyword">static</span> searchable = <span class="java&#45;keyword">true</span><p class="paragraph"/>    <span class="java&#45;keyword">static</span> constraints = &#123;
+        name blank: <span class="java&#45;keyword">false</span>
+        description nullable: <span class="java&#45;keyword">true</span>
+        owner nullable: <span class="java&#45;keyword">false</span>
+    &#125;
+&#125;<p class="paragraph"/>class Department &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> name
+    <span class="java&#45;object">Long</span> numberOfProducts
+    Store store<p class="paragraph"/>    <span class="java&#45;keyword">static</span> constraints = &#123;
+        numberOfProducts nullable: <span class="java&#45;keyword">true</span>
+    &#125;<p class="paragraph"/>    <span class="java&#45;keyword">static</span> searchable = &#123;
+        store parent: <span class="java&#45;keyword">true</span>, component:<span class="java&#45;keyword">true</span>
+    &#125;
+&#125;</pre></div><p class="paragraph"/>Search for all departments which are childs of a store with the owner "Shopowner"<p class="paragraph"/><div class="code"><pre>def result = elasticSearchService.search(
+    QueryBuilders.hasParentQuery(<span class="java&#45;quote">"store"</span>, QueryBuilders.matchQuery(<span class="java&#45;quote">"owner"</span>, <span class="java&#45;quote">"Shopowner"</span>)),
+    <span class="java&#45;keyword">null</span> as Closure,
+    &#91;indices: Department, types: Department&#93;
+)</pre></div>
+
+
                     </div>
                 </td>
                 <td id="col2">
@@ -728,6 +937,24 @@ and corresponding <code>User</code> indexed documents will be updated since we h
                     <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
                 </div>
                 <div class="menu">
+                    
+                    <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Dynamic Domain Methods</h1><div class="menu-sub">
+                        
+                        
+                        <div class="menu-item"><a href="../ref/Dynamic%20Domain%20Methods/countHits.html">countHits</a>
+                        </div>
+                        
+                        <div class="menu-item"><a href="../ref/Dynamic%20Domain%20Methods/index.html">index</a>
+                        </div>
+                        
+                        <div class="menu-item"><a href="../ref/Dynamic%20Domain%20Methods/search.html">search</a>
+                        </div>
+                        
+                        <div class="menu-item"><a href="../ref/Dynamic%20Domain%20Methods/unindex.html">unindex</a>
+                        </div>
+                        
+                        </div>
+                    </div>
                     
                     <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">ElasticSearchAdminService</h1><div class="menu-sub">
                         
@@ -754,24 +981,6 @@ and corresponding <code>User</code> indexed documents will be updated since we h
                         </div>
                         
                         <div class="menu-item"><a href="../ref/ElasticSearchService/unindex.html">unindex</a>
-                        </div>
-                        
-                        </div>
-                    </div>
-                    
-                    <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Injected Domain Dynamic Methods</h1><div class="menu-sub">
-                        
-                        
-                        <div class="menu-item"><a href="../ref/Injected%20Domain%20Dynamic%20Methods/countHits.html">countHits</a>
-                        </div>
-                        
-                        <div class="menu-item"><a href="../ref/Injected%20Domain%20Dynamic%20Methods/index.html">index</a>
-                        </div>
-                        
-                        <div class="menu-item"><a href="../ref/Injected%20Domain%20Dynamic%20Methods/search.html">search</a>
-                        </div>
-                        
-                        <div class="menu-item"><a href="../ref/Injected%20Domain%20Dynamic%20Methods/unindex.html">unindex</a>
                         </div>
                         
                         </div>
