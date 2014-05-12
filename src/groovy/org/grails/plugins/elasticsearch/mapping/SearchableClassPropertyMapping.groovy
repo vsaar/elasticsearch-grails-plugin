@@ -25,7 +25,7 @@ class SearchableClassPropertyMapping {
 
     private static final Set<String> SEARCHABLE_MAPPING_OPTIONS = ['boost', 'index', 'analyzer']
     private static final Set<String> SEARCHABLE_SPECIAL_MAPPING_OPTIONS =
-            ['component', 'converter', 'reference', 'excludeFromAll', 'maxDepth', 'multi_field', 'parent', 'geoPoint']
+            ['component', 'converter', 'reference', 'excludeFromAll', 'maxDepth', 'multi_field', 'parent', 'geoPoint', 'nested', 'includeInParent', 'includeInRoot']
 
     /** Grails attributes of this property */
     private GrailsDomainClassProperty grailsProperty
@@ -104,6 +104,36 @@ class SearchableClassPropertyMapping {
         maxDepth != null ? maxDepth : 0 as int
     }
 
+    /**
+     * See http://www.elasticsearch.org/guide/reference/mapping/nested-type/
+     * @return whether to use "nested" type
+     */
+    public boolean isNested() {
+        return specialMappingAttributes.get("nested") != null ? (Boolean)specialMappingAttributes.get("nested") : false;
+    }
+ 
+    /**
+     * Whether to include nested document in parent document.
+     */
+    public boolean shouldIncludeInParent() {
+        Object includeInParent = specialMappingAttributes.get("includeInParent");
+        if (includeInParent != null && includeInParent instanceof Boolean) {
+            return (Boolean)includeInParent;
+        }
+        return false;
+    }
+ 
+    /**
+     * Whether to include nested document in root document.
+     */
+    public boolean shouldIncludeInRoot() {
+        Object includeInRoot = specialMappingAttributes.get("includeInRoot");
+        if (includeInRoot != null && includeInRoot instanceof Boolean) {
+            return (Boolean)includeInRoot;
+        }
+        return false;
+    }
+ 
     Class getBestGuessReferenceType() {
         // is type defined explicitly?
         if (reference instanceof Class) {

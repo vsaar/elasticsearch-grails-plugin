@@ -99,20 +99,20 @@ class ElasticSearchMappingFactory {
                     if (javaPrimitivesToElastic.containsKey(referencedPropertyType.toString())) {
                         propType = javaPrimitivesToElastic.get(referencedPropertyType.toString())
                     } else {
-                        propType = 'object'
+                        propType = 'nested'
                     }
                 } else if (isBigDecimalType(referencedPropertyType)) {
                     propType = 'double'
                 } else {
-                    propType = 'object'
+                    propType = 'nested'
                 }
 
                 if (scpm.getReference() != null) {
-                    propType = 'object'      // fixme: think about composite ids.
+                    propType = 'nested'      // fixme: think about composite ids.
                 } else if (scpm.isComponent()) {
                     // Proceed with nested mapping.
                     // todo limit depth to avoid endless recursion?
-                    propType = 'object'
+                    propType = 'nested'
                     //noinspection unchecked
                     propOptions.putAll((Map<String, Object>)
                             (getElasticMapping(scpm.getComponentPropertyMapping()).values().iterator().next()))
@@ -126,6 +126,11 @@ class ElasticSearchMappingFactory {
                         props = [:]
                         propOptions.properties = props
                     }
+                    if (scpm.isNested()) {
+                        propOptions.put("include_in_parent", scpm.shouldIncludeInParent());
+                        propOptions.put("include_in_root", scpm.shouldIncludeInRoot());
+                        propType = "nested";
+                    }
                     GrailsDomainClass referencedDomainClass = grailsProperty.getReferencedDomainClass()
                     GrailsDomainClassProperty idProperty = referencedDomainClass.getPropertyByName('id')
                     String idType = idProperty.getTypePropertyName()
@@ -136,7 +141,7 @@ class ElasticSearchMappingFactory {
             }
             propOptions.type = propType
             // See http://www.elasticsearch.com/docs/elasticsearch/mapping/all_field/
-            if ((propType != 'object') && scm.isAll()) {
+            if ((propType != 'nested') && scm.isAll()) {
                 // does it make sense to include objects into _all?
                 propOptions.include_in_all = !scpm.shouldExcludeFromAll()
             }
